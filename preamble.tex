@@ -1,0 +1,137 @@
+%! TEX root = ./main-arXiv.tex
+
+% ##################################################################
+% ############## PREAMBLE: Packages and Custom Macros ##############
+% ##################################################################
+
+% --- Core Math & Fonts ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{mathrsfs} % For \mathscr{P}
+
+% --- Complexity & Algorithms ---
+\usepackage{complexity} 
+\usepackage[linesnumbered,algoruled,boxed,lined]{algorithm2e}
+
+% --- Graphics & Visualization ---
+\usepackage{graphicx}
+\graphicspath{ {./images/} } % Automates the folder path for your S-Pen screenshots
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,backgrounds,patterns,calc, graphs, shapes, fit, arrows.meta}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz/, up to date check=md5]
+
+% --- Lists & Formatting ---
+\usepackage{enumitem}
+\usepackage[noadjust]{cite} % To sort references inline
+
+% --- Captions & Subfigures ---
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+
+% --- Theorem Environments & Restating ---
+\usepackage{thmtools}
+\usepackage{thm-restate}
+
+\declaretheorem[name=Theorem,numberwithin=section]{thm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{observation}{Observation}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Remark}[section]
+
+% Custom labels for heavy definition environments
+\makeatletter
+\newcommand{\customlabel}[2]{%
+\protected@write \@auxout {}{\string \newlabel {#1}{{#2}{}}}}
+\makeatother
+
+% ################ PROBLEM ENVIRONMENTS ##########################
+
+\newcommand{\defparproblem}[4]{
+  \vspace{1mm}
+\noindent\fbox{
+  \begin{minipage}{0.96\textwidth}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr} #1  & {\bf{Parameter:}} #3
+\\ \end{tabular*}
+  {\bf{Input:}} #2  \\
+  {\bf{Question:}} #4
+  \end{minipage}
+  }
+  \vspace{1mm}
+}
+
+\newcommand{\defproblem}[3]{
+  \vspace{1mm}
+\noindent\fbox{
+  \begin{minipage}{0.96\textwidth}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr} #1 \\ \end{tabular*}
+  {\bf{Input:}} #2  \\
+  {\bf{Question:}} #3
+  \end{minipage}
+  }
+  \vspace{1mm}
+}
+
+% ################ CUSTOM MATH COMMANDS ##########################
+
+% Color Coding / Editing
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand{\blue}[1]{{\color{blue}{#1}}}
+\newcommand{\red}[1]{{\color{red}[#1]}}
+\newcommand{\later}[1]{{\color{MidnightBlue}{#1}}}
+\newcommand{\ym}[1]{\textcolor{violet}{#1 - YM}}
+\newcommand{\pt}[1]{\textcolor{purple}{#1 - PT}}
+
+% Standard Sets & Notation
+\newcommand{\bbN}{{\mathbb N}}
+\newcommand{\bbR}{{\mathbb R}}
+\newcommand{\dist}[2]{d\left(#1,#2\right)}
+\newcommand{\ostar}{\mathcal{O}^\star}
+\newcommand{\ETH}{{\textsf{ETH}}}
+\newcommand{\POLY}{\textsf{poly}}
+
+% Graph Parameters
+\newcommand{\tw}{\textsf{tw}}
+\newcommand{\tl}{\textsf{tl}}
+\newcommand{\ctw}{\textsf{ctw}}
+\newcommand{\td}{\textsf{td}}
+\newcommand{\fvs}{\textsf{fvs}}
+\newcommand{\vc}{\textsf{vc}}
+\newcommand{\diam}{\textsf{diam}}
+
+% Complexity / Logic
+\newcommand{\yes}{\textsc{Yes}}
+\newcommand{\no}{\textsc{No}}
+\newcommand{\YES}{\textsc{Yes}}
+\newcommand{\NO}{\textsc{No}}
+\newcommand{\true}{\texttt{True}}
+\newcommand{\false}{\texttt{False}}
+
+% Caligraphic Letters
+\newcommand{\calA}{\mathcal{A}} \newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}} \newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{{\mathcal H}} \newcommand{\calP}{\mathcal{P}}
+\newcommand{\calS}{\mathcal{S}} \newcommand{\calT}{\mathcal{T}}
+\newcommand{\scrP}{\mathscr{P}}
+\newcommand{\calO}{\mathcal{O}}
+
+% Problem names
+\newcommand{\MDS}{\textsc{Minimum Dominating Set}}
+\newcommand{\DS}{\textsc{Dominating Set}}
+\newcommand{\VC}{\textsc{Vertex Cover}}
+
+% --- Hyperlinks (MUST BE LAST) ---
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  citecolor=green!70!black,
+  linkcolor=blue,
+  urlcolor=blue
+}

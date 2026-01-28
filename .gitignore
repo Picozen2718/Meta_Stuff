@@ -1,0 +1,22 @@
+# LaTeX junk
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.pdf
+*.bbl
+*.blg
+
+# TikZ clutter
+tikz/*.log
+tikz/*.md5
+tikz/*.dpth
+
+# Keep the figure PDFs so you don't have to re-render them
+!tikz/*.pdf
+
+# VS Code specific
+.vscode/
