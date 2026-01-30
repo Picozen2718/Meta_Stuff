@@ -1,4 +1,8 @@
 # LaTeX junk
+*.auxlock
+*.dep
+*.dpth
+*.md5
 *.aux
 *.fdb_latexmk
 *.fls
@@ -15,7 +19,7 @@ tikz/*.log
 tikz/*.md5
 tikz/*.dpth
 
-# Remove the Tikz generated PDFs
+# Remove the figure PDFs
 tikz/*.pdf
 !images/*.pdf
 !images/*.png
