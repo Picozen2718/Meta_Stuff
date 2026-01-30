@@ -15,8 +15,11 @@ tikz/*.log
 tikz/*.md5
 tikz/*.dpth
 
-# Keep the figure PDFs so you don't have to re-render them
-!tikz/*.pdf
+# Remove the Tikz generated PDFs
+tikz/*.pdf
+!images/*.pdf
+!images/*.png
+!images/*.jpg
 
 # VS Code specific
 .vscode/
